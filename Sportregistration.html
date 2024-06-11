@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sport Competition Registration Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url('https://img.freepik.com/free-psd/realistic-sports-balls-frame-element_23-2150399177.jpg'); /* Replace 'background_image.jpg' with your image file */
+        background-size: cover;
+        background-position: center;
+        color: #003532; 
+    }
+    .frontbox {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        background-color: rgba(255, 255, 255, 0.8); 
+        background-image: url('https://c4.wallpaperflare.com/wallpaper/893/321/274/sports-themed-for-desktops-wallpaper-preview.jpg'); /* Add your image file path here */
+        background-size: cover;
+        background-position: center;
+    }
+    h2 {
+        text-align: center;
+        color: #ff0000; /* kulay ng h2 */
+    }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="submit"], select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #660000;
+        border-radius: 5px;
+        box-sizing: border-box;
+        color: #000000; 
+    }
+    input[type="submit"] {
+        background-color: #48009b;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #ff0000;
+    }
+    select {
+        background-color: #eff6ff; 
+        color: #1a1a1a; 
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    .delete-btn {
+        background-color: #ff0000;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="frontbox">
+    <h2>Sport Competition Registration Form</h2>
+    <form id="registrationForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="Name" placeholder="Enter your name" required>
+
+        <label for="gender">Gender</label>
+<select id="gender" name="Gender" required>
+    <option value="">Select gender</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Other">Other</option>
+</select>
+
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="Phone Number" placeholder="Enter your phone number" required>
+
+        <label for="address">Address</label>
+        <input type="text" id="address" name="Address" placeholder="Enter your address" required>
+
+        <label for="playerID">ID Number</label>
+        <input type="number" id="playerID" name="ID" placeholder="Enter your ID Number" required>
+
+        <label for="sport">Sport</label>
+        <select id="sport" name="Sport" required>
+            <option value="">Select sport</option>
+            <option value="Football">Football</option>
+            <option value="Basketball">Basketball</option>
+            <option value="Tennis">Tennis</option>
+            <option value="Swimming">Swimming</option>
+            <option value="Volleyball">Volleyball</option>
+            <option value="Table Tennis">Table Tennis</option>
+            
+        </select>
+
+        <input type="submit" value="Register Player">
+    </form>
+</div>
+
+<div id="tableContainer"></div>
+
+<script>
+    var players = JSON.parse(localStorage.getItem('players')) || [];
+
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        var formData = new FormData(this);
+        var player = {};
+        formData.forEach(function(value, key){
+            player[key] = value;
+        });
+        players.push(player);
+        localStorage.setItem('players', JSON.stringify(players));
+        displayPlayers();
+    });
+
+    function displayPlayers() {
+        var tableContainer = document.getElementById('tableContainer');
+        tableContainer.innerHTML = '';
+        if (players.length > 0) {
+            var table = document.createElement('table');
+            var thead = document.createElement('thead');
+            var tbody = document.createElement('tbody');
+            var headerRow = document.createElement('tr');
+            for (var key in players[0]) {
+                var th = document.createElement('th');
+                th.textContent = key;
+                headerRow.appendChild(th);
+            }
+            headerRow.innerHTML += '<th>Action</th>'; 
+            thead.appendChild(headerRow);
+            for (var i = 0; i < players.length; i++) {
+                var row = document.createElement('tr');
+                for (var key in players[i]) {
+                    var td = document.createElement('td');
+                    td.textContent = players[i][key];
+                    row.appendChild(td);
+                }
+                var deleteCell = document.createElement('td');
+                var deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.className = 'delete-btn';
+                deleteButton.dataset.index = i; 
+                deleteButton.addEventListener('click', function() {
+                    var index = this.dataset.index;
+                    players.splice(index, 1);
+                    localStorage.setItem('players', JSON.stringify(players));
+                    displayPlayers();
+                });
+                deleteCell.appendChild(deleteButton);
+                row.appendChild(deleteCell);
+                tbody.appendChild(row);
+            }
+            table.appendChild(thead);
+            table.appendChild(tbody);
+            tableContainer.appendChild(table);
+        }
+    }
+
+    
+    displayPlayers();
+</script>
+
+</body>
+</html>
