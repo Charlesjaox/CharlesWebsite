@@ -1,0 +1,23 @@
+body {
+    margin-top: 0px;
+    width: 600px;
+    text-align: center;
+}
+
+.header {
+    height: 60px;
+    margin: 0px;
+}
+
+.nav {
+    height: 40px;
+}
+
+.content {
+    margin: 10px;
+    padding-top: 20px;
+}
+
+.footer {
+    height: 40px;
+}

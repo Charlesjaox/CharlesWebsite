@@ -1,0 +1,314 @@
+.portfolio {
+  font-size: 30px;
+    font-family: serif;
+    font-weight: bold;
+    color: #000000;
+    padding: 5px;
+    text-align: left;
+    
+  }
+
+  header {
+    margin: 1px 1px 1px 1px;
+    padding-top: 10px;
+    padding: 1px 1px 1px 1px;
+    border-style: groove;
+    background-color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+
+  }
+
+
+  nav {
+    text-align: right;
+    
+  }
+  a {
+    color: #000;
+    position: relative;
+    text-decoration: none;
+    padding-left: 10px;
+  }
+  
+  a::before {
+    background: hsl(318, 31%, 84%);
+    content: "";
+    inset: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
+    z-index: -1;
+  }
+  
+  a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /*body code*/
+
+ 
+  
+  .table td {
+  align-items: center;
+  justify-content: center;
+  padding-right: 10px;
+}
+
+.name {
+  padding-left: 540px;
+  padding-top: 50px;
+  font-family: serif;
+    font-weight: bold;
+    color: #000000;
+  font-size: 25px;
+  text-align: left;
+}
+
+.book {
+  margin-top: 50px;
+  margin-left:50px;
+  position: relative;
+  border-radius: 10px;
+  width: 200px;
+  height: 230px;
+  background-color: whitesmoke;
+  -webkit-box-shadow: 1px 1px 12px #000;
+  box-shadow: 1px 1px 12px #000;
+  -webkit-transform: preserve-3d;
+  -ms-transform: preserve-3d;
+  transform: preserve-3d;
+  -webkit-perspective: 2000px;
+  perspective: 2000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #000;
+}
+
+
+
+.cover {
+  top: 0;
+  position: absolute;
+  background-color: lightgray;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform-origin: 0;
+  -ms-transform-origin: 0;
+  transform-origin: 0;
+  -webkit-box-shadow: 1px 1px 12px #000;
+  box-shadow: 1px 1px 12px #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.book:hover .cover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotatey(-80deg);
+  -ms-transform: rotatey(-80deg);
+  transform: rotatey(-80deg);
+}
+
+.book a  {
+  font-size: 20px;
+  font-weight: bolder;
+  line-height: 180%;
+}
+
+.book h1 {
+  text-align: center;
+}
+
+.book .Lol a  {
+  font-size: 17px;
+  font-weight: bolder;
+  line-height: 180%;
+}
+
+.book .ml a  {
+  font-size: 19px;
+  font-weight: bolder;
+  line-height: 180%;
+}
+
+    /*body code box1*/
+  .card-title {
+    color: #262626;
+    font-size: 25px;
+    line-height: normal;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+  }
+  
+  .small-desc {
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: #452c2c;
+  }
+  
+  .small-desc {
+    font-size: 1em;
+  }
+  
+  .go-corner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    background: linear-gradient(135deg, #6293c8, #384c6c);
+    border-radius: 0 4px 0 32px;
+  }
+  
+  .go-arrow {
+    margin-top: -4px;
+    margin-right: -4px;
+    color: white;
+    font-family: courier, sans;
+  }
+  
+  .card {
+    display: block;
+    position: relative;
+    max-width: 430px;
+    max-height: 430px;
+    background-color: #f2f8f9;
+    border-radius: 10px;
+    padding: 2em 1.2em;
+    margin: 12px;
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #dbfaff, #ffffff);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+  color:hsl(0, 0%, 0%)
+  }
+  
+  .card:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: linear-gradient(135deg, #cab092, #fceac4);
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.35s ease-out;
+  }
+  
+  .card:hover:before {
+    transform: scale(28);
+  }
+  
+  .card:hover .small-desc {
+    transition: all 0.5s ease-out;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .card:hover .card-title {
+    transition: all 0.5s ease-out;
+    color: #ffffff;
+  }
+
+ 
+  
+
+  /*body background*/
+  body {
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20210915/pngtree-geometric-pattern-white-gold-minimalist-creative-background-image_879782.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
+
+  
+  
+  /*button*/
+  button {
+      font-size: 15px;
+      padding-left: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      background-color: #f1f1f1;
+      border: 1px solid rgb(255, 255, 255);
+      border-radius: 1em;
+      color: #000000;
+      font-weight: bolder;
+      transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s;
+      box-shadow: -5px 5px 0px 0px hsl(0, 0%, 99%);
+    }
+    
+    button:hover {
+      transform: translate(5px, -5px);
+    }
+
+    /*body background*/
+    body {
+      background-color: #ffffff;
+    }
+  
+  /*footer background*/
+  
+  .footer {
+    background-color: #333;
+    padding: 15px 0; /* Adjust padding as needed */
+    color: #fff;
+    text-align: center;
+  }
+  
+  .footer-content {
+    max-width: 1200px; /* Adjust max-width as needed */
+    margin: 0 auto; /* Center content */
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Distribute content evenly */
+    align-items: center; /* Align items vertically */
+  }
+  
+  .footer-links {
+    margin-top: 20px;
+  }
+  
+  .social-icon__link,
+  .menu__link {
+    font-size: 25px;
+    color: #ffffff;
+    margin: 0 10px;
+    text-decoration: none;
+    opacity: 0.75;
+    font-weight: 300;
+  }
+  
+  .social-icon__link:hover,
+  .menu__link:hover {
+    opacity: 1;
+  }
+  

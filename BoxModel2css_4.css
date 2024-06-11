@@ -1,0 +1,13 @@
+.centered-box1 {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    padding: 40px;
+}
+
+.centered-box2 {
+    width: 200px;
+    height: 400px;
+    margin: auto;
+    padding: 40px;
+}

@@ -1,0 +1,17 @@
+table .row-1 td {
+    border:  2px solid blue;
+     padding: 10px;
+     text-align: center;
+}
+ 
+ table .row-2 td {    
+    border: 2px dashed green;
+     padding: 10px;
+     text-align: center;
+ }
+ 
+table .row-3 td {
+     border: 2px dotted red;
+     padding: 10px;
+     text-align: center;
+ }

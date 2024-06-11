@@ -1,0 +1,9 @@
+.column-container {
+    display: block;
+    width: 600px;
+}
+
+.column {
+    display: inline;
+    width: 200px;
+}

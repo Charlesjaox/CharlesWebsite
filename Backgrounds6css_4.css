@@ -1,0 +1,18 @@
+h1 {
+    background-image: linear-gradient(to bottom, #53e5fc, #ffffff);
+}
+
+h2 {   background-image: linear-gradient(to right, #ffcccc, #ffd699);
+}
+
+p {
+    background-image: linear-gradient(to bottom, #f0c3ff, #ffcc60);
+}
+
+h3 {
+    background-image: radial-gradient(circle at center, #ffffcc, #ccffcc);
+}
+
+.last-child {
+    background-image: radial-gradient(circle at center, #ccffcc, #1cff1c);
+}
